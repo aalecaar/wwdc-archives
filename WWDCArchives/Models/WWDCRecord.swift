@@ -15,7 +15,7 @@ struct WWDCRecord: Codable {
     let events: [Event]
 }
 
-struct Session: Codable {
+struct Session: Codable, Identifiable {
     let id: String
     let title: String
     let description: String?
@@ -75,7 +75,7 @@ struct Media: Codable {
     }
 }
 
-struct Event: Codable {
+struct Event: Codable, Identifiable {
     let id: String
     let name: String
     let description: String

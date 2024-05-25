@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import Observation
 
-final class RecordLoader {
+struct RecordLoader {
     let record: WWDCRecord
     
     init() {
