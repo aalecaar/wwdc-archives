@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EEBCFEC2C0161B3002B1C07 /* wwdc-record.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEB2C0161B3002B1C07 /* wwdc-record.json */; };
+		0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */; };
 		0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDCF762C0110DC0007FAD5 /* WWDCArchivesApp.swift */; };
 		0EFDCF792C0110DC0007FAD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDCF782C0110DC0007FAD5 /* ContentView.swift */; };
 		0EFDCF7B2C0110DD0007FAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFDCF7A2C0110DD0007FAD5 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EEBCFEB2C0161B3002B1C07 /* wwdc-record.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wwdc-record.json"; path = "../../wwdc-record.json"; sourceTree = "<group>"; };
+		0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCRecord.swift; sourceTree = "<group>"; };
 		0EFDCF732C0110DC0007FAD5 /* WWDCArchives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWDCArchives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFDCF762C0110DC0007FAD5 /* WWDCArchivesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCArchivesApp.swift; sourceTree = "<group>"; };
 		0EFDCF782C0110DC0007FAD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				0EFDCF762C0110DC0007FAD5 /* WWDCArchivesApp.swift */,
 				0EFDCF782C0110DC0007FAD5 /* ContentView.swift */,
+				0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */,
+				0EEBCFEB2C0161B3002B1C07 /* wwdc-record.json */,
 				0EFDCF7A2C0110DD0007FAD5 /* Assets.xcassets */,
 				0EFDCF7C2C0110DD0007FAD5 /* Preview Content */,
 			);
@@ -127,6 +133,7 @@
 			files = (
 				0EFDCF7E2C0110DD0007FAD5 /* Preview Assets.xcassets in Resources */,
 				0EFDCF7B2C0110DD0007FAD5 /* Assets.xcassets in Resources */,
+				0EEBCFEC2C0161B3002B1C07 /* wwdc-record.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EFDCF792C0110DC0007FAD5 /* ContentView.swift in Sources */,
+				0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */,
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
