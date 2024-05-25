@@ -11,11 +11,11 @@ struct RecordLoader {
     let record: WWDCRecord
     
     init() {
-        self.record = try! Self.decodeRecord()
+        self.record = try! Self.decodeRecord() // TODO: Find a better way to decode and initialize this. Ignoring the possible errors it can throws makes futile the effort of making it a throwing function in the first place. Besides that, if an error is thrown, the app will crash at runtine
     }
     
     private static func decodeRecord() throws -> WWDCRecord {
-        guard let url = Bundle.main.url(forResource: "wwdc-record", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: "WWDCRecord", withExtension: "json") else {
             throw DecodingError.invalidURL
         }
         

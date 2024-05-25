@@ -10,17 +10,23 @@ import Observation
 
 @Observable
 final class RecordManager {
-    private let wwdcRecord = RecordLoader()
+    private let record = RecordLoader()
     
     var updateDate: Date {
-        wwdcRecord.record.updated
+        self.record.record.updated
     }
     
-    var sessions: [Session] {
-        wwdcRecord.record.sessions
+    var allSessions: [Session] {
+        self.record.record.sessions
     }
     
     var events: [Event] {
-        wwdcRecord.record.events
+        self.record.record.events
+    }
+    
+    func sessions(for event: Event) -> [Session] {
+        self.record.record.sessions.filter { session in
+            session.eventID == event.id
+        }
     }
 }

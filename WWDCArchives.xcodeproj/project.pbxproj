@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EEBCFEC2C0161B3002B1C07 /* wwdc-record.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEB2C0161B3002B1C07 /* wwdc-record.json */; };
+		0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */; };
+		0EEBCFEC2C0161B3002B1C07 /* WWDCRecord.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */; };
 		0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */; };
 		0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */; };
 		0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFF12C018889002B1C07 /* RecordManager.swift */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EEBCFEB2C0161B3002B1C07 /* wwdc-record.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "wwdc-record.json"; path = "../../wwdc-record.json"; sourceTree = "<group>"; };
+		0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowView.swift; sourceTree = "<group>"; };
+		0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WWDCRecord.json; path = ../../WWDCRecord.json; sourceTree = "<group>"; };
 		0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCRecord.swift; sourceTree = "<group>"; };
 		0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLoader.swift; sourceTree = "<group>"; };
 		0EEBCFF12C018889002B1C07 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			children = (
 				0EFDCF782C0110DC0007FAD5 /* WWDCArchivesView.swift */,
 				0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */,
+				0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,7 +94,7 @@
 				0EEBCFF62C019810002B1C07 /* App */,
 				0EEBCFF72C019813002B1C07 /* Models */,
 				0EEBCFF52C01980A002B1C07 /* Views */,
-				0EEBCFEB2C0161B3002B1C07 /* wwdc-record.json */,
+				0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */,
 				0EFDCF7A2C0110DD0007FAD5 /* Assets.xcassets */,
 				0EFDCF7C2C0110DD0007FAD5 /* Preview Content */,
 			);
@@ -166,7 +169,7 @@
 			files = (
 				0EFDCF7E2C0110DD0007FAD5 /* Preview Assets.xcassets in Resources */,
 				0EFDCF7B2C0110DD0007FAD5 /* Assets.xcassets in Resources */,
-				0EEBCFEC2C0161B3002B1C07 /* wwdc-record.json in Resources */,
+				0EEBCFEC2C0161B3002B1C07 /* WWDCRecord.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +186,7 @@
 				0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */,
 				0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */,
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
+				0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
