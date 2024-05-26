@@ -12,10 +12,13 @@ struct EventSessionsView: View {
     let event: Event
     var body: some View {
         List(sessions) { session in
-            NavigationLink {
-                SessionDetailView(session: session, event: event)
-            } label: {
-                SessionRowView(session: session, event: event)
+            LazyVStack {
+                NavigationLink {
+                    SessionDetailView(session: session, event: event)
+                } label: {
+                    SessionRowView(session: session, event: event)
+                }
+                
             }
             .listRowSeparator(.hidden, edges: .top)
             .listRowSeparator(.visible, edges: .bottom)

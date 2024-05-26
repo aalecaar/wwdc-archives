@@ -46,6 +46,7 @@ struct SessionDetailView: View {
                 
                 Text(session.description ?? "No available description")
                 
+                
                 Text("Resources")
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -87,10 +88,9 @@ struct SessionDetailView: View {
                 .padding(.vertical, 6)
                 
             }
-            .padding()
-            
+            .padding(.horizontal)
         }
-        
+        .navigationBarTitleDisplayMode(.inline) // Without this, the scroll view will have a lot of ugly space on top. I think this is because navigationBarTitleDisplayMode is .large by default.
     }
 }
 

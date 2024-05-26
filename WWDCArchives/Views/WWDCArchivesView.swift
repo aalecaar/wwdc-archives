@@ -13,14 +13,17 @@ struct WWDCArchivesView: View {
     var body: some View {
         NavigationStack {
             List(record.events) { event in
-                NavigationLink {
-                    EventSessionsView(sessions: record.sessions(for: event), event: event)
-                } label: {
-                    EventRowView(event: event)
+                LazyVStack {
+                    NavigationLink {
+                        EventSessionsView(sessions: record.sessions(for: event), event: event)
+                    } label: {
+                        EventRowView(event: event)
+                    }
                 }
                 .listRowSeparator(.hidden, edges: .top)
                 .listRowSeparator(.visible, edges: .bottom)
                  // Repeating this modifier in this way allowed me to delete the separator below the navigation title. The first modifier hides the separator that appears on top of a row. The second one makes visible the separator again, but this time it was set to appear at the bottom of the row. Yep, weird as fuck, it should never have applied a separator to the navigation title.
+             
                 
 
             }
