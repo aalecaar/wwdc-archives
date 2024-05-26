@@ -25,8 +25,13 @@ struct SessionDetailView: View {
                         .font(.subheadline)
                     
                     HStack(spacing: 4) {
-                        Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
-                        
+                        if event.id != "tech-talks" {
+                            Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
+                        } else {
+                            Text(event.id.replacing("-", with: " ").capitalized)
+                        }
+                            
+                            
                         Text("• Session \(session.eventContentID)")
                         
                         if let duration = session.media.duration {
