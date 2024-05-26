@@ -25,7 +25,8 @@ struct SessionDetailView: View {
                         .font(.subheadline)
                     
                     HStack(spacing: 4) {
-                        Text(event.id.replacingOccurrences(of: "20", with: "").uppercased())
+                        Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
+                        
                         Text("• Session \(session.eventContentID)")
                         
                         if let duration = session.media.duration {
