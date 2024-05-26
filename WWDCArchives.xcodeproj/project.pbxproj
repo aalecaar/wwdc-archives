@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */; };
+		0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */; };
+		0ECAEDCD2C02988C00F87DB9 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */; };
 		0EEBCFEC2C0161B3002B1C07 /* WWDCRecord.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */; };
 		0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */; };
 		0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowView.swift; sourceTree = "<group>"; };
+		0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSessionsView.swift; sourceTree = "<group>"; };
+		0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 		0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WWDCRecord.json; path = ../../WWDCRecord.json; sourceTree = "<group>"; };
 		0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCRecord.swift; sourceTree = "<group>"; };
 		0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLoader.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 				0EFDCF782C0110DC0007FAD5 /* WWDCArchivesView.swift */,
 				0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */,
 				0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */,
+				0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */,
+				0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,11 +187,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EEBCFF42C0196F4002B1C07 /* EventRowView.swift in Sources */,
+				0ECAEDCD2C02988C00F87DB9 /* SessionDetailView.swift in Sources */,
 				0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */,
 				0EFDCF792C0110DC0007FAD5 /* WWDCArchivesView.swift in Sources */,
 				0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */,
 				0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */,
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
+				0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */,
 				0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

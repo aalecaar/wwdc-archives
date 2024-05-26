@@ -9,29 +9,32 @@ import SwiftUI
 
 struct SessionRowView: View {
     let session: Session
-    
+    let event: Event
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(session.title)
                 .font(.headline)
                 .foregroundStyle(.black)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(session.topic)
                     .font(.subheadline)
-                
+
                 HStack(spacing: 4) {
-                    Text("\(session.year.formatted(.number.grouping(.never)))")
+                    Text("Session \(session.eventContentID)")
                     
-                    Text("•")
                     
                     if let duration = session.media.duration {
-                        Text("\(duration / 60)m")
+                        Text("• \(duration / 60)m")
                     }
-                    
+                   
                 }
                 .font(.footnote)
                 
+                if let platforms = session.platforms {
+                    Text(platforms.joined(separator: ", "))
+                        .font(.subheadline)
+                }
             }
         }
         .foregroundStyle(.secondary)
@@ -41,5 +44,5 @@ struct SessionRowView: View {
 }
 
 #Preview {
-    SessionRowView(session: RecordManager().allSessions[3429])
+    SessionRowView(session: RecordManager().allSessions[3000], event: RecordManager().events[3])
 }

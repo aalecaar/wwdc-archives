@@ -14,8 +14,7 @@ struct WWDCArchivesView: View {
         NavigationStack {
             List(record.events) { event in
                 NavigationLink {
-                    Text("s")
-                        .navigationTitle(event.name)
+                    EventSessionsView(sessions: record.sessions(for: event), event: event)
                 } label: {
                     EventRowView(event: event)
                 }
