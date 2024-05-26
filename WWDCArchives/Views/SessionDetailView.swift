@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SessionDetailView: View {
-    @Environment(\.openURL) private var openURL
     let session: Session
     let event: Event
+    @State private var resourceLinksPresented = 0
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -22,7 +22,7 @@ struct SessionDetailView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(session.topic)
                         .font(.subheadline)
-
+                    
                     HStack(spacing: 4) {
                         Text(event.id.replacingOccurrences(of: "20", with: "").uppercased())
                         Text("• Session \(session.eventContentID)")
@@ -35,32 +35,42 @@ struct SessionDetailView: View {
                 }
                 .foregroundStyle(.secondary)
                 .fontWeight(.semibold)
-
+                
                 
                 Text(session.description ?? "No available description")
                 
-              Text("Resources")
+                Text("Resources")
                     .font(.title3)
                     .fontWeight(.semibold)
                     .padding(.top, 20)
                 
-                if let appleDeveloperURL = session.appleWeblink {
-                    Button {
-                        openURL(appleDeveloperURL)
-                    } label: {
-                        HStack(spacing: 18) {
-                            Image(systemName: "link")
-                                .font(.headline)
-                            
-                            VStack(alignment: .leading) {
-                                Text("See on Apple Developer")
-                                
-                                Divider()
-                            }
+                    Group {
+                        if let appleDeveloperURL = session.appleWeblink {
+                            ResourceLinkView(url: appleDeveloperURL, systemImageName: "link", description: "See on Apple Developer")
+                            resourceLinksPresented += 1
                         }
+                        
+                        if let hdDownloadURL = session.media.downloadHD {
+                            ResourceLinkView(url: hdDownloadURL, systemImageName: "arrow.down.circle", description: "Download HD")
+                            resourceLinksPresented += 1
+
+                        }
+                        
+                        if let sdDownloadURL = session.media.downloadSD {
+                            ResourceLinkView(url: sdDownloadURL, systemImageName: "arrow.down.circle", description: "Download SD")
+                            resourceLinksPresented += 1
+
+                        }
+                        
+                        if let slidesURL = session.media.slides {
+                            ResourceLinkView(url: slidesURL, systemImageName: "link", description: "Download Slides")
+                            resourceLinksPresented += 1
+
+                        }
+                        
+                        
                     }
-                    
-                }
+                    .padding(.vertical, 6)
                 
             }
             .padding()
@@ -68,6 +78,7 @@ struct SessionDetailView: View {
         }
     }
 }
+
 
 #Preview {
     SessionDetailView(session: RecordManager().allSessions[3421], event: RecordManager().events[2])
