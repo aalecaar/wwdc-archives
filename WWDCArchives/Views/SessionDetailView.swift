@@ -46,6 +46,12 @@ struct SessionDetailView: View {
                 
                 Text(session.description ?? "No available description")
                 
+                if let speakers = session.speakers {
+                    Text("\(speakers.joined(separator: ", "))")
+                        .foregroundStyle(.secondary)
+                        .fontWeight(.semibold)
+                        .padding(.top, 8)
+                }
                 
                 Text("Resources")
                     .font(.title3)
