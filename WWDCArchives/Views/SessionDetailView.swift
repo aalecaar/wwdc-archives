@@ -58,7 +58,6 @@ struct SessionDetailView: View {
                             .onAppear(perform: {
                                 resourceLinksPresented += 1
                             })
-                        
                     }
                     
                     if let sdDownloadURL = session.media.downloadSD {
@@ -66,7 +65,6 @@ struct SessionDetailView: View {
                             .onAppear(perform: {
                                 resourceLinksPresented += 1
                             })
-                        
                     }
                     
                     if let slidesURL = session.media.slides {
@@ -74,11 +72,10 @@ struct SessionDetailView: View {
                             .onAppear(perform: {
                                 resourceLinksPresented += 1
                             })
-                        
                     }
                     
                     if resourceLinksPresented == 0 {
-                        ContentUnavailableView("No content available", systemImage: "wrench.and.screwdriver")
+                        ContentUnavailableView("Sorry, no resources available for this session☹️", systemImage: "wrench.and.screwdriver")
                     }
                 }
                 .padding(.vertical, 6)

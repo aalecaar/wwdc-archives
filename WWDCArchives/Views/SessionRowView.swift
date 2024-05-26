@@ -14,7 +14,6 @@ struct SessionRowView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(session.title)
                 .font(.headline)
-                .foregroundStyle(.black)
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(session.topic)
@@ -36,8 +35,9 @@ struct SessionRowView: View {
                         .font(.subheadline)
                 }
             }
+            .foregroundStyle(.secondary)
+
         }
-        .foregroundStyle(.secondary)
         .fontWeight(.semibold)
 
     }
