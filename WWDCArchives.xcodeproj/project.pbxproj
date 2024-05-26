@@ -54,6 +54,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EC0D1A22C03BB0900AFFBC8 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		0EEBCFF52C01980A002B1C07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +113,7 @@
 		0EFDCF752C0110DC0007FAD5 /* WWDCArchives */ = {
 			isa = PBXGroup;
 			children = (
+				0EC0D1A22C03BB0900AFFBC8 /* Explore */,
 				0EEBCFF62C019810002B1C07 /* App */,
 				0EEBCFF72C019813002B1C07 /* Models */,
 				0EEBCFF52C01980A002B1C07 /* Views */,

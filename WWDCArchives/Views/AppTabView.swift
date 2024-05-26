@@ -14,8 +14,8 @@ struct AppTabView: View {
                 .tabItem { Label("Explore", systemImage: "rectangle.and.text.magnifyingglass.rtl") }
             
             
-            Text("Charts")
-                .tabItem { Label("Charts", systemImage: "chart.bar") }
+            Text("Insights")
+                .tabItem { Label("Insights", systemImage: "chart.bar") }
             
             Text("Search")
                 .tabItem { Label("Search", systemImage: "magnifyingglass") }

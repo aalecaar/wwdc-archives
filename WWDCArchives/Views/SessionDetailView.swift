@@ -44,13 +44,16 @@ struct SessionDetailView: View {
                 
                 
                 Text(session.description ?? "No available description")
+                    .padding(.vertical, 4)
                 
                 if let speakers = session.speakers {
-                    Text("\(speakers.joined(separator: ", "))")
-                        .foregroundStyle(.secondary)
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .padding(.top, 8)
+                    let listFormatter = ListFormatter()
+                    if let joinedSpeakers = listFormatter.string(from: speakers) {
+                        Text(joinedSpeakers)
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                    }
                 }
                 
                 Text("Resources")
@@ -91,7 +94,7 @@ struct SessionDetailView: View {
                         ContentUnavailableView("Sorry, no resources available for this session☹️", systemImage: "wrench.and.screwdriver")
                     }
                 }
-                .padding(.vertical, 6)
+                .padding(.vertical, 4)
                 
             }
             .padding(.horizontal)
