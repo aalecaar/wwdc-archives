@@ -11,6 +11,7 @@ struct SessionDetailView: View {
     let session: Session
     let event: Event
     @State private var resourceLinksPresented = 0
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -44,40 +45,52 @@ struct SessionDetailView: View {
                     .fontWeight(.semibold)
                     .padding(.top, 20)
                 
-                    Group {
-                        if let appleDeveloperURL = session.appleWeblink {
-                            ResourceLinkView(url: appleDeveloperURL, systemImageName: "link", description: "See on Apple Developer")
-                            resourceLinksPresented += 1
-                        }
-                        
-                        if let hdDownloadURL = session.media.downloadHD {
-                            ResourceLinkView(url: hdDownloadURL, systemImageName: "arrow.down.circle", description: "Download HD")
-                            resourceLinksPresented += 1
-
-                        }
-                        
-                        if let sdDownloadURL = session.media.downloadSD {
-                            ResourceLinkView(url: sdDownloadURL, systemImageName: "arrow.down.circle", description: "Download SD")
-                            resourceLinksPresented += 1
-
-                        }
-                        
-                        if let slidesURL = session.media.slides {
-                            ResourceLinkView(url: slidesURL, systemImageName: "link", description: "Download Slides")
-                            resourceLinksPresented += 1
-
-                        }
-                        
+                Group {
+                    if let appleDeveloperURL = session.appleWeblink {
+                        ResourceLinkView(url: appleDeveloperURL, systemImageName: "link", description: "See on Apple Developer")
+                            .onAppear(perform: {
+                                resourceLinksPresented += 1
+                            })
+                    }
+                    
+                    if let hdDownloadURL = session.media.downloadHD {
+                        ResourceLinkView(url: hdDownloadURL, systemImageName: "arrow.down.circle", description: "Download HD")
+                            .onAppear(perform: {
+                                resourceLinksPresented += 1
+                            })
                         
                     }
-                    .padding(.vertical, 6)
+                    
+                    if let sdDownloadURL = session.media.downloadSD {
+                        ResourceLinkView(url: sdDownloadURL, systemImageName: "arrow.down.circle", description: "Download SD")
+                            .onAppear(perform: {
+                                resourceLinksPresented += 1
+                            })
+                        
+                    }
+                    
+                    if let slidesURL = session.media.slides {
+                        ResourceLinkView(url: slidesURL, systemImageName: "link", description: "Download Slides")
+                            .onAppear(perform: {
+                                resourceLinksPresented += 1
+                            })
+                        
+                    }
+                    
+                    if resourceLinksPresented == 0 {
+                        ContentUnavailableView("No content available", systemImage: "wrench.and.screwdriver")
+                    }
+                }
+                .padding(.vertical, 6)
                 
             }
             .padding()
             
         }
+        
     }
 }
+
 
 
 #Preview {
