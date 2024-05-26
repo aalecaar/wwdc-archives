@@ -22,7 +22,6 @@ struct SessionDetailView: View {
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(session.topic)
-                        .font(.subheadline)
                     
                     HStack(spacing: 4) {
                         if event.id != "tech-talks" {
@@ -49,6 +48,7 @@ struct SessionDetailView: View {
                 if let speakers = session.speakers {
                     Text("\(speakers.joined(separator: ", "))")
                         .foregroundStyle(.secondary)
+                        .font(.subheadline)
                         .fontWeight(.semibold)
                         .padding(.top, 8)
                 }

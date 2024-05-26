@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */; };
+		0EC0D1A12C03B8DF00AFFBC8 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */; };
 		0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */; };
 		0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */; };
 		0ECAEDCD2C02988C00F87DB9 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowView.swift; sourceTree = "<group>"; };
 		0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSessionsView.swift; sourceTree = "<group>"; };
 		0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */,
 				0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */,
 				0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */,
+				0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */,
+				0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,9 +201,11 @@
 				0EFDCF792C0110DC0007FAD5 /* WWDCArchivesView.swift in Sources */,
 				0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */,
 				0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */,
+				0EC0D1A12C03B8DF00AFFBC8 /* AppTabView.swift in Sources */,
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
 				0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */,
 				0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */,
+				0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */,
 				0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
