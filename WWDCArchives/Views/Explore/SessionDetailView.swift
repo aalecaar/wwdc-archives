@@ -94,7 +94,7 @@ struct SessionDetailView: View {
                         ContentUnavailableView("Sorry, no resources available for this session☹️", systemImage: "wrench.and.screwdriver")
                     }
                 }
-                .padding(.vertical, 4)
+                .padding(.vertical, 8)
                 
             }
             .padding(.horizontal)

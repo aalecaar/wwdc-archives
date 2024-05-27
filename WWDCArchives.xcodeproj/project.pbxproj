@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */; };
 		0EC0D1A12C03B8DF00AFFBC8 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */; };
+		0EC0D1A62C0404D300AFFBC8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D1A52C0404D300AFFBC8 /* SearchView.swift */; };
 		0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */; };
 		0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */; };
 		0ECAEDCD2C02988C00F87DB9 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */; };
 		0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */; };
-		0EEBCFEC2C0161B3002B1C07 /* WWDCRecord.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */; };
 		0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */; };
 		0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */; };
 		0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFF12C018889002B1C07 /* RecordManager.swift */; };
@@ -27,11 +27,12 @@
 /* Begin PBXFileReference section */
 		0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		0EC0D1A52C0404D300AFFBC8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0EC0D1AE2C040AF000AFFBC8 /* WWDCRecord.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WWDCRecord.json; sourceTree = "<group>"; };
 		0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowView.swift; sourceTree = "<group>"; };
 		0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSessionsView.swift; sourceTree = "<group>"; };
 		0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 		0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLinkView.swift; sourceTree = "<group>"; };
-		0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WWDCRecord.json; path = ../../WWDCRecord.json; sourceTree = "<group>"; };
 		0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCRecord.swift; sourceTree = "<group>"; };
 		0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLoader.swift; sourceTree = "<group>"; };
 		0EEBCFF12C018889002B1C07 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
@@ -54,26 +55,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EC0D1A22C03BB0900AFFBC8 /* Explore */ = {
+		0EC0D1A72C04080800AFFBC8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0EC0D1A52C0404D300AFFBC8 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0EC0D1A82C04080900AFFBC8 /* Insights */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Explore;
+			path = Insights;
 			sourceTree = "<group>";
 		};
-		0EEBCFF52C01980A002B1C07 /* Views */ = {
+		0EC0D1A92C04080A00AFFBC8 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */,
+				0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */,
+				0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */,
+				0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */,
+				0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */,
+				0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */,
+			);
+			name = Explore;
+			path = Views/Explore;
+			sourceTree = "<group>";
+		};
+		0EC0D1AA2C04086000AFFBC8 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0EC0D1AB2C0408DB00AFFBC8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				0EFDCF782C0110DC0007FAD5 /* WWDCArchivesView.swift */,
-				0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */,
-				0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */,
-				0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */,
-				0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */,
-				0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */,
-				0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */,
-				0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */,
 			);
-			path = Views;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0EC0D1AC2C040A6C00AFFBC8 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		0EC0D1AD2C040ADE00AFFBC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EC0D1AE2C040AF000AFFBC8 /* WWDCRecord.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		0EEBCFF62C019810002B1C07 /* App */ = {
@@ -113,11 +152,15 @@
 		0EFDCF752C0110DC0007FAD5 /* WWDCArchives */ = {
 			isa = PBXGroup;
 			children = (
-				0EC0D1A22C03BB0900AFFBC8 /* Explore */,
+				0EC0D1AD2C040ADE00AFFBC8 /* Resources */,
 				0EEBCFF62C019810002B1C07 /* App */,
+				0EC0D1AC2C040A6C00AFFBC8 /* FAQ */,
+				0EC0D1A82C04080900AFFBC8 /* Insights */,
+				0EC0D1AB2C0408DB00AFFBC8 /* Main */,
 				0EEBCFF72C019813002B1C07 /* Models */,
-				0EEBCFF52C01980A002B1C07 /* Views */,
-				0EEBCFEB2C0161B3002B1C07 /* WWDCRecord.json */,
+				0EC0D1A72C04080800AFFBC8 /* Search */,
+				0EC0D1AA2C04086000AFFBC8 /* TabBar */,
+				0EC0D1A92C04080A00AFFBC8 /* Explore */,
 				0EFDCF7A2C0110DD0007FAD5 /* Assets.xcassets */,
 				0EFDCF7C2C0110DD0007FAD5 /* Preview Content */,
 			);
@@ -192,7 +235,6 @@
 			files = (
 				0EFDCF7E2C0110DD0007FAD5 /* Preview Assets.xcassets in Resources */,
 				0EFDCF7B2C0110DD0007FAD5 /* Assets.xcassets in Resources */,
-				0EEBCFEC2C0161B3002B1C07 /* WWDCRecord.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +253,7 @@
 				0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */,
 				0EC0D1A12C03B8DF00AFFBC8 /* AppTabView.swift in Sources */,
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
+				0EC0D1A62C0404D300AFFBC8 /* SearchView.swift in Sources */,
 				0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */,
 				0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */,
 				0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */,

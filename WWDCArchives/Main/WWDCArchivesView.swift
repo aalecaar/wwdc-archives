@@ -16,5 +16,4 @@ struct WWDCArchivesView: View {
 
 #Preview {
     WWDCArchivesView()
-        .preferredColorScheme(.light)
 }

@@ -16,7 +16,7 @@ struct EventSessionsView: View {
                 NavigationLink {
                     SessionDetailView(session: session, event: event)
                 } label: {
-                    SessionRowView(session: session, event: event)
+                    SessionRowView(session: session)
                 }
                 
             }

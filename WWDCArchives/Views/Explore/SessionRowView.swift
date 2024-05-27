@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SessionRowView: View {
     let session: Session
-    let event: Event
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(session.title)
@@ -44,5 +43,5 @@ struct SessionRowView: View {
 }
 
 #Preview {
-    SessionRowView(session: RecordManager().allSessions[3000], event: RecordManager().events[3])
+    SessionRowView(session: RecordManager().allSessions[3000])
 }

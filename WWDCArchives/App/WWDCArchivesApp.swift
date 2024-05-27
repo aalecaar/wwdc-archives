@@ -12,9 +12,6 @@ struct WWDCArchivesApp: App {
     var body: some Scene {
         WindowGroup {
             WWDCArchivesView()
-                .onAppear {
-                    print(RecordManager().allSessions.count)
-                }
         }
     }
 }
