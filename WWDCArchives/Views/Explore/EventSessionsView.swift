@@ -10,24 +10,37 @@ import SwiftUI
 struct EventSessionsView: View {
     let sessions: [Session]
     let event: Event
+    @State private var searchText = ""
+    @State private var filteredSessions: [Session] = []
+ 
     var body: some View {
-        NavigationStack {
-            List(sessions) { session in
+        
+            List(searchText.isEmpty ? sessions : filteredSessions) { session in
                 NavigationLink {
                     SessionDetailView(session: session, event: event)
                 } label: {
                     SessionRowView(session: session)
+                        
                 }
                 .listRowSeparator(.hidden, edges: .top)
                 .listRowSeparator(.visible, edges: .bottom)
             }
             .listStyle(.plain)
             .navigationTitle(event.name)
+            .searchable(text: $searchText)
+            .textInputAutocapitalization(.never)
+            .onChange(of: searchText) { _, session in
+                filteredSessions = sessions.filter { session in
+                    session.title.lowercased().contains(searchText.lowercased()) || session.topic.lowercased().contains(searchText.lowercased()) || session.eventContentID.lowercased().contains(searchText.lowercased())
+                }
+            }
+
             
-        }
+            
+        
     }
 }
 
 #Preview {
-    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[1]), event: RecordManager().events[1])
+    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[0]), event: RecordManager().events[0])
 }
