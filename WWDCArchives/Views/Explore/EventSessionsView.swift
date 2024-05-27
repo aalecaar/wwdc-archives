@@ -27,7 +27,7 @@ struct EventSessionsView: View {
             }
             .listStyle(.plain)
             .navigationTitle(event.name)
-            .searchable(text: $searchText)
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .textInputAutocapitalization(.never)
             .onChange(of: searchText) { _, session in
                 filteredSessions = sessions.filter { session in
