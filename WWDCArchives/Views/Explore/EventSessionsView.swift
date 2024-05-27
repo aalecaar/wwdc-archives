@@ -11,23 +11,23 @@ struct EventSessionsView: View {
     let sessions: [Session]
     let event: Event
     var body: some View {
-        List(sessions) { session in
-            LazyVStack {
+        NavigationStack {
+            List(sessions) { session in
                 NavigationLink {
                     SessionDetailView(session: session, event: event)
                 } label: {
                     SessionRowView(session: session)
                 }
-                
+                .listRowSeparator(.hidden, edges: .top)
+                .listRowSeparator(.visible, edges: .bottom)
             }
-            .listRowSeparator(.hidden, edges: .top)
-            .listRowSeparator(.visible, edges: .bottom)
+            .listStyle(.plain)
+            .navigationTitle(event.name)
+            
         }
-        .listStyle(.plain)
-        .navigationTitle(event.name)
     }
 }
 
 #Preview {
-    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[0]), event: RecordManager().events[0])
+    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[1]), event: RecordManager().events[1])
 }

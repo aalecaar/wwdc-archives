@@ -38,7 +38,7 @@ struct SessionRowView: View {
 
         }
         .fontWeight(.semibold)
-
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

@@ -13,13 +13,8 @@ struct AppTabView: View {
             EventsView()
                 .tabItem { Label("Explore", systemImage: "rectangle.and.text.magnifyingglass.rtl") }
             
-            
             Text("Insights")
                 .tabItem { Label("Insights", systemImage: "chart.bar") }
-            
-            Text("Search")
-                .tabItem { Label("Search", systemImage: "magnifyingglass") }
-            
             
             Text("FAQ")
                 .tabItem { Label("FAQ", systemImage: "questionmark.bubble") }
