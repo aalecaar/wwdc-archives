@@ -10,20 +10,29 @@ import SwiftUI
 struct EventSessionsView: View {
     let sessions: [Session]
     let event: Event
+    @Binding var path: NavigationPath
     @State private var searchText = ""
     
     var body: some View {
         List(filteredSessions) { session in
-            NavigationLink {
-                SessionDetailView(session: session, event: event)
-            } label: {
+            NavigationLink(value: session) {
                 SessionRowView(session: session)
-                
             }
             .listRowSeparator(.hidden, edges: .top)
-            .listRowSeparator(.visible, edges: .bottom)
+            
+//            NavigationLink {
+//                SessionDetailView(session: session, event: event)
+//            } label: {
+//                SessionRowView(session: session)
+//                
+//            }
+//            .listRowSeparator(.hidden, edges: .top)
+//            .listRowSeparator(.visible, edges: .bottom)
         }
         .listStyle(.plain)
+        .navigationDestination(for: Session.self, destination: { session in
+            SessionDetailView(session: session, event: event, path: $path)
+        })
         .navigationTitle(event.name)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         .textInputAutocapitalization(.never)
@@ -48,7 +57,7 @@ struct EventSessionsView: View {
         return filteredSessions
     }
 }
-
-#Preview {
-    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[0]), event: RecordManager().events[0])
-}
+//
+//#Preview {
+//    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[0]), event: RecordManager().events[0], path: $Path())
+//}

@@ -12,6 +12,7 @@ struct AppTabView: View {
         TabView {
             EventsView()
                 .tabItem { Label("Explore", systemImage: "magnifyingglass.circle.fill") }
+              
             
             Text("Insights")
                 .tabItem { Label("Insights", systemImage: "chart.bar") }

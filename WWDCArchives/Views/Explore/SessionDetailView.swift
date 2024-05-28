@@ -10,6 +10,7 @@ import SwiftUI
 struct SessionDetailView: View {
     let session: Session
     let event: Event
+    @Binding var path: NavigationPath
     @State private var resourceLinksPresented = 0
     
     var body: some View {
@@ -98,6 +99,13 @@ struct SessionDetailView: View {
                 
             }
             .padding(.horizontal)
+            .toolbar {
+                Button {
+                    path = NavigationPath()
+                } label: {
+                    Text("Home")
+                }
+            }
         }
         .navigationBarTitleDisplayMode(.inline) // Without this, the scroll view will have a lot of ugly space on top. I think this is because navigationBarTitleDisplayMode is .large by default.
     }
@@ -105,6 +113,6 @@ struct SessionDetailView: View {
 
 
 
-#Preview {
-    SessionDetailView(session: RecordManager().allSessions[3421], event: RecordManager().events[2])
-}
+//#Preview {
+//    SessionDetailView(session: RecordManager().allSessions[3421], event: RecordManager().events[2])
+//}
