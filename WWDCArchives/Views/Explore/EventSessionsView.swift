@@ -27,8 +27,13 @@ struct EventSessionsView: View {
         .navigationTitle(event.name)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         .textInputAutocapitalization(.never)
-
+        .autocorrectionDisabled()
         .animation(.easeInOut, value: filteredSessions)
+        .overlay {
+            if filteredSessions.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
+            }
+        }
     }
     
     var filteredSessions: [Session] {
