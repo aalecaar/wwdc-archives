@@ -19,15 +19,6 @@ struct EventSessionsView: View {
                 SessionRowView(session: session)
             }
             .listRowSeparator(.hidden, edges: .top)
-            
-//            NavigationLink {
-//                SessionDetailView(session: session, event: event)
-//            } label: {
-//                SessionRowView(session: session)
-//                
-//            }
-//            .listRowSeparator(.hidden, edges: .top)
-//            .listRowSeparator(.visible, edges: .bottom)
         }
         .listStyle(.plain)
         .navigationDestination(for: Session.self, destination: { session in
@@ -57,7 +48,10 @@ struct EventSessionsView: View {
         return filteredSessions
     }
 }
-//
-//#Preview {
-//    EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[0]), event: RecordManager().events[0], path: $Path())
-//}
+
+#Preview {
+    NavigationStack {
+        @State var path = NavigationPath()
+        EventSessionsView(sessions: RecordManager().sessions(for: RecordManager().events[0]), event: RecordManager().events[0], path: $path)
+    }
+}

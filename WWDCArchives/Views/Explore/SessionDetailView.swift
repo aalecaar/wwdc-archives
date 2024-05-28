@@ -12,7 +12,7 @@ struct SessionDetailView: View {
     let event: Event
     @Binding var path: NavigationPath
     @State private var resourceLinksPresented = 0
-    
+    @State private var isFavorite = false
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -21,27 +21,42 @@ struct SessionDetailView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(session.topic)
-                    
-                    HStack(spacing: 4) {
-                        if event.id != "tech-talks" {
-                            Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
-                        } else {
-                            Text(event.id.replacing("-", with: " ").capitalized)
-                        }
-                            
-                            
-                        Text("• Session \(session.eventContentID)")
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(session.topic)
                         
-                        if let duration = session.media.duration {
-                            Text("• \(duration / 60)m")
+                        HStack(spacing: 4) {
+                            if event.id != "tech-talks" {
+                                Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
+                            } else {
+                                Text(event.id.replacing("-", with: " ").capitalized)
+                            }
+                            
+                            
+                            Text("• Session \(session.eventContentID)")
+                            
+                            if let duration = session.media.duration {
+                                Text("• \(duration / 60)m")
+                            }
                         }
+                        .font(.footnote)
                     }
-                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fontWeight(.semibold)
+                    
+                    Spacer()
+                    
+                    Button {
+                        isFavorite.toggle()
+                    } label: {
+                        Image(systemName: isFavorite ? "star.fill" : "star")
+                            .font(.title2)
+                            .symbolEffect(.bounce, value: isFavorite)
+                            .sensoryFeedback(.selection, trigger: isFavorite)
+                    }
+                    .foregroundStyle(isFavorite ? .yellow : .secondary)
+                   
                 }
-                .foregroundStyle(.secondary)
-                .fontWeight(.semibold)
                 
                 
                 Text(session.description ?? "No available description")
@@ -113,6 +128,11 @@ struct SessionDetailView: View {
 
 
 
-//#Preview {
-//    SessionDetailView(session: RecordManager().allSessions[3421], event: RecordManager().events[2])
-//}
+#Preview {
+    
+    NavigationStack {
+        @State var isFavorite = false
+        @State var path = NavigationPath()
+        SessionDetailView(session: RecordManager().allSessions[3421], event: RecordManager().events[2], path: $path)
+    }
+}
