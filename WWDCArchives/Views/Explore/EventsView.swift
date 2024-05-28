@@ -22,7 +22,7 @@ struct EventsView: View {
             .navigationDestination(for: Event.self) { event in
                 EventSessionsView(sessions: record.sessions(for: event), event: event, path: $path)
             }
-            .navigationTitle("Events")
+            .navigationTitle("Home")
             
             
         }

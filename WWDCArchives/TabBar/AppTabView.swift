@@ -11,11 +11,14 @@ struct AppTabView: View {
     var body: some View {
         TabView {
             EventsView()
-                .tabItem { Label("Explore", systemImage: "magnifyingglass.circle.fill") }
+                .tabItem { Label("Home", systemImage: "house.fill") }
               
             
             Text("Insights")
                 .tabItem { Label("Insights", systemImage: "chart.bar") }
+            
+            Text("Favorites")
+                .tabItem { Label("Favorites", systemImage: "star.fill") }
             
             Text("FAQ")
                 .tabItem { Label("FAQ", systemImage: "questionmark.bubble") }
