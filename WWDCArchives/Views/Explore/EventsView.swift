@@ -13,24 +13,19 @@ struct EventsView: View {
     var body: some View {
         NavigationStack {
             List(record.events) { event in
-                NavigationLink {
-                    EventSessionsView(sessions: record.sessions(for: event), event: event)
-                } label: {
+                NavigationLink(value: event) {
                     EventRowView(event: event)
                 }
-                .listRowSeparator(.hidden, edges: .top)
-                .listRowSeparator(.visible, edges: .bottom)
-                // Repeating this modifier in this way allowed me to delete the separator on top of the first row (in reality, it hides the separator on top of every view), which made the navigation tittle seems like it had a separator below it, which is ugly.
-                
-                
-                
+                .listSectionSeparator(.hidden, edges: .top)
             }
             .listStyle(.plain)
+            .navigationDestination(for: Event.self) { event in
+                EventSessionsView(sessions: record.sessions(for: event), event: event)
+            }
             .navigationTitle("Events")
             
             
         }
-
     }
 }
 

@@ -15,7 +15,7 @@ struct WWDCRecord: Codable {
     let events: [Event]
 }
 
-struct Session: Codable, Identifiable, Equatable {
+struct Session: Codable, Identifiable, Equatable, Hashable {
     let id: String
     let title: String
     let description: String?
@@ -43,7 +43,7 @@ struct Session: Codable, Identifiable, Equatable {
     }
 }
 
-struct Media: Codable, Equatable {
+struct Media: Codable, Equatable, Hashable {
     let duration: Int?
     let noVideoAvailable: Bool?
     let downloadSD: URL?
@@ -75,7 +75,7 @@ struct Media: Codable, Equatable {
     }
 }
 
-struct Event: Codable, Identifiable {
+struct Event: Codable, Identifiable, Hashable {
     let id: String
     let name: String
     let description: String
