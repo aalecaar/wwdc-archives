@@ -11,11 +11,9 @@ struct EventSessionsView: View {
     let sessions: [Session]
     let event: Event
     @State private var searchText = ""
-    @State private var filteredSessions: [Session] = []
     
     var body: some View {
-        
-        List(searchText.isEmpty ? sessions : filteredSessions) { session in
+        List(filteredSessions) { session in
             NavigationLink {
                 SessionDetailView(session: session, event: event)
             } label: {
@@ -29,14 +27,20 @@ struct EventSessionsView: View {
         .navigationTitle(event.name)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         .textInputAutocapitalization(.never)
-        .onChange(of: searchText) { _, _ in
-            filteredSessions = sessions.filter { session in
-                session.title.lowercased().contains(searchText.lowercased()) ||
-                session.topic.lowercased().contains(searchText.lowercased()) ||
-                session.eventContentID.lowercased().contains(searchText.lowercased())
-            }
-        }
+
         .animation(.easeInOut, value: filteredSessions)
+    }
+    
+    var filteredSessions: [Session] {
+        guard !searchText.isEmpty else { return sessions }
+        
+        let filteredSessions = sessions.filter { session in
+            session.title.lowercased().contains(searchText.lowercased()) ||
+            session.topic.lowercased().contains(searchText.lowercased()) ||
+            session.eventContentID.lowercased().contains(searchText.lowercased())
+        }
+        
+        return filteredSessions
     }
 }
 
