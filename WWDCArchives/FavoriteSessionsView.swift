@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct FavoriteSessionsView: View {
-    @Binding var sessionDetailViews: [SessionDetailView]
-    @State private var path = NavigationPath()
+    @State private var record = RecordManager()
     var body: some View {
-        List(sessionDetailViews, id: \.session.id) { sessionDetailView in
-            sessionDetailView
+        NavigationStack {
+            List {
+                ForEach(0..<10) { index in
+                    Text("\(index)")
+                }
+            }
+            .listStyle(.plain)
         }
     }
 }
 
 #Preview {
-    NavigationStack {
-        let record = RecordManager()
-        @State var isFavorite = false
-        @State var path = NavigationPath()
-        @State var sesssionDetailViews = [SessionDetailView(session: record.allSessions[0], event: record.events[0], path: $path),
-                                          SessionDetailView(session: record.allSessions[0], event: record.events[0], path: $path)]
-        FavoriteSessionsView(sessionDetailViews: $sesssionDetailViews)
-    }
+    FavoriteSessionsView()
 }
