@@ -12,6 +12,7 @@ struct EventSessionsView: View {
     let event: Event
     @Binding var path: NavigationPath
     @State private var searchText = ""
+    let showHomeToolbar = true
     
     var body: some View {
         List(filteredSessions) { session in
@@ -23,7 +24,7 @@ struct EventSessionsView: View {
         }
         .listStyle(.plain)
         .navigationDestination(for: Session.self, destination: { session in
-            SessionDetailView(session: session, event: event, path: $path)
+            SessionDetailView(session: session, event: event, path: $path, showHomeToolbar: showHomeToolbar)
         })
         .navigationTitle(event.name)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))

@@ -12,6 +12,7 @@ struct SessionDetailView: View {
     let event: Event
     @Binding var path: NavigationPath
     @State private var resourceLinksPresented = 0
+    let showHomeToolbar: Bool
     
     var body: some View {
         ScrollView {
@@ -107,10 +108,12 @@ struct SessionDetailView: View {
             }
             .padding(.horizontal)
             .toolbar {
-                Button {
-                    path = NavigationPath()
-                } label: {
-                    Text("Home")
+                if showHomeToolbar {
+                    Button {
+                        path = NavigationPath()
+                    } label: {
+                        Text("Home")
+                    }
                 }
             }
         }
@@ -124,6 +127,6 @@ struct SessionDetailView: View {
     NavigationStack {
         @State var isFavorite = false
         @State var path = NavigationPath()
-        SessionDetailView(session: RecordManager().allSessions[0], event: RecordManager().events[0], path: $path)
+        SessionDetailView(session: RecordManager().allSessions[0], event: RecordManager().events[0], path: $path, showHomeToolbar: true)
     }
 }

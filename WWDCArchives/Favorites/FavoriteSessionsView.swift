@@ -12,6 +12,7 @@ struct FavoriteSessionsView: View {
     let allSessions: [Session]
     let event: Event
     @Binding var path: NavigationPath
+    let showHomeToolbar = false
     
     private var favoriteSessions: [Session] {
         return allSessions.filter { favoritesManager.favoriteSessionIds.contains($0.id) }
@@ -20,7 +21,7 @@ struct FavoriteSessionsView: View {
     var body: some View {
         NavigationStack {
             List(favoriteSessions) { session in
-                NavigationLink(destination: SessionDetailView(session: session, event: event, path: $path)) {
+                NavigationLink(destination: SessionDetailView(session: session, event: event, path: $path, showHomeToolbar: showHomeToolbar)) {
                     SessionRowView(session: session)
                 }
                 .listRowSeparator(.hidden, edges: .top)
