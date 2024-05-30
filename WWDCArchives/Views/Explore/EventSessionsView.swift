@@ -21,7 +21,6 @@ struct EventSessionsView: View {
             .listRowSeparator(.hidden, edges: .top)
             .listRowSeparator(.visible, edges: .bottom) // This deletes the line separator on top of the first item. I guess this should not be necessary, but it's the only way I could achieved the desired result
         }
-
         .listStyle(.plain)
         .navigationDestination(for: Session.self, destination: { session in
             SessionDetailView(session: session, event: event, path: $path)

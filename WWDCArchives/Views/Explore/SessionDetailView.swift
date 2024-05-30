@@ -12,7 +12,7 @@ struct SessionDetailView: View {
     let event: Event
     @Binding var path: NavigationPath
     @State private var resourceLinksPresented = 0
-    @State private var isFavorite = false
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -46,15 +46,7 @@ struct SessionDetailView: View {
                     
                     Spacer()
                     
-                    Button {
-                        isFavorite.toggle()
-                    } label: {
-                        Image(systemName: isFavorite ? "star.fill" : "star")
-                            .font(.title2)
-                            .symbolEffect(.bounce, value: isFavorite)
-                            .sensoryFeedback(.selection, trigger: isFavorite)
-                    }
-                    .foregroundStyle(isFavorite ? .yellow : .secondary)
+                    FavoriteButton(sessionId: session.id)
                    
                 }
                 
@@ -129,10 +121,9 @@ struct SessionDetailView: View {
 
 
 #Preview {
-    
     NavigationStack {
         @State var isFavorite = false
         @State var path = NavigationPath()
-        SessionDetailView(session: RecordManager().allSessions[3421], event: RecordManager().events[2], path: $path)
+        SessionDetailView(session: RecordManager().allSessions[0], event: RecordManager().events[0], path: $path)
     }
 }

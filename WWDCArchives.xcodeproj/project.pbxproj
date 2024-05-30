@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0F5A492C07F4FB00BE0265 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F5A482C07F4FB00BE0265 /* InsightsView.swift */; };
 		0E669F7F2C06AE0B0005420F /* FavoriteSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E669F7E2C06AE0B0005420F /* FavoriteSessionsView.swift */; };
 		0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */; };
 		0EC0D1A12C03B8DF00AFFBC8 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */; };
@@ -15,6 +16,8 @@
 		0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */; };
 		0ECAEDCD2C02988C00F87DB9 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */; };
 		0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */; };
+		0ED6CF972C08E63000F4F23C /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6CF962C08E63000F4F23C /* FavoriteButton.swift */; };
+		0ED6CF9B2C08E81E00F4F23C /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6CF9A2C08E81E00F4F23C /* FavoritesManager.swift */; };
 		0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */; };
 		0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */; };
 		0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFF12C018889002B1C07 /* RecordManager.swift */; };
@@ -26,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0F5A482C07F4FB00BE0265 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		0E669F7E2C06AE0B0005420F /* FavoriteSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSessionsView.swift; sourceTree = "<group>"; };
 		0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		0EC0D1A02C03B8DF00AFFBC8 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		0ECAEDCA2C0294C600F87DB9 /* EventSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSessionsView.swift; sourceTree = "<group>"; };
 		0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 		0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLinkView.swift; sourceTree = "<group>"; };
+		0ED6CF962C08E63000F4F23C /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		0ED6CF9A2C08E81E00F4F23C /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCRecord.swift; sourceTree = "<group>"; };
 		0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLoader.swift; sourceTree = "<group>"; };
 		0EEBCFF12C018889002B1C07 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 		0EC0D1A82C04080900AFFBC8 /* Insights */ = {
 			isa = PBXGroup;
 			children = (
+				0E0F5A482C07F4FB00BE0265 /* InsightsView.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -72,6 +79,7 @@
 				0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */,
 				0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */,
 				0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */,
+				0ED6CF962C08E63000F4F23C /* FavoriteButton.swift */,
 			);
 			name = Explore;
 			path = Views/Explore;
@@ -119,6 +127,7 @@
 		0EEBCFF72C019813002B1C07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0ED6CF9A2C08E81E00F4F23C /* FavoritesManager.swift */,
 				0EEBCFF12C018889002B1C07 /* RecordManager.swift */,
 				0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */,
 				0EEBCFED2C01622A002B1C07 /* WWDCRecord.swift */,
@@ -242,8 +251,10 @@
 				0EEBCFF42C0196F4002B1C07 /* EventRowView.swift in Sources */,
 				0E669F7F2C06AE0B0005420F /* FavoriteSessionsView.swift in Sources */,
 				0ECAEDCD2C02988C00F87DB9 /* SessionDetailView.swift in Sources */,
+				0ED6CF972C08E63000F4F23C /* FavoriteButton.swift in Sources */,
 				0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */,
 				0EFDCF792C0110DC0007FAD5 /* WWDCArchivesView.swift in Sources */,
+				0E0F5A492C07F4FB00BE0265 /* InsightsView.swift in Sources */,
 				0EEBCFEE2C01622A002B1C07 /* WWDCRecord.swift in Sources */,
 				0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */,
 				0EC0D1A12C03B8DF00AFFBC8 /* AppTabView.swift in Sources */,
@@ -252,6 +263,7 @@
 				0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */,
 				0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */,
 				0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */,
+				0ED6CF9B2C08E81E00F4F23C /* FavoritesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
