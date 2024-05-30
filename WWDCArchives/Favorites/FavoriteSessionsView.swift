@@ -23,6 +23,9 @@ struct FavoriteSessionsView: View {
             List(favoriteSessions) { session in
                 NavigationLink(destination: SessionDetailView(session: session, event: event, path: $path, showHomeToolbar: showHomeToolbar)) {
                     SessionRowView(session: session)
+                        .overlay {
+                            Text(session.formattedEventID)
+                        }
                 }
                 .listRowSeparator(.hidden, edges: .top)
                 .listRowSeparator(.visible, edges: .bottom)

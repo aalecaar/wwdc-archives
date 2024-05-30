@@ -27,6 +27,13 @@ struct Session: Codable, Identifiable, Equatable, Hashable {
     let media: Media
     let platforms: [String]?
     let appleWeblink: URL?
+    var formattedEventID: String {
+        if eventID != "tech-talks" {
+            return eventID.replacing("20", with: "", maxReplacements: 1).uppercased()
+        } else {
+            return eventID.replacing("-", with: " ").capitalized
+        }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case id
