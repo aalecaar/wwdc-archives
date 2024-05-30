@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct WWDCArchivesApp: App {
+    @State private var favoritesManager = FavoritesManager.shared
+
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(favoritesManager)
         }
     }
 }

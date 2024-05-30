@@ -10,8 +10,9 @@ import SwiftUI
 struct FavoritesView: View {
     let allSessions: [Session]
     let event: Event
+    @State private var path = NavigationPath()
     var body: some View {
-        FavoriteSessionsView(allSessions: allSessions, event: event)
+        FavoriteSessionsView(allSessions: allSessions, event: event, path: $path)
     }
 }
 

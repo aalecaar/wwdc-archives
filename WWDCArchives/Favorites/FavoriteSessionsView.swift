@@ -11,6 +11,7 @@ struct FavoriteSessionsView: View {
     @State private var favoritesManager = FavoritesManager.shared
     let allSessions: [Session]
     let event: Event
+    @Binding var path: NavigationPath
     
     private var favoriteSessions: [Session] {
         return allSessions.filter { favoritesManager.favoriteSessionIds.contains($0.id) }
@@ -19,7 +20,7 @@ struct FavoriteSessionsView: View {
     var body: some View {
         NavigationStack {
             List(favoriteSessions) { session in
-                NavigationLink(destination: SessionDetailView(session: session, event: event, path: .constant(NavigationPath()))) {
+                NavigationLink(destination: SessionDetailView(session: session, event: event, path: $path)) {
                     SessionRowView(session: session)
                 }
                 .listRowSeparator(.hidden, edges: .top)
@@ -42,6 +43,6 @@ struct FavoriteSessionsView: View {
 #Preview {
     Group {
         let event = RecordManager().events[0]
-        FavoriteSessionsView(allSessions: RecordManager().sessions(for: event), event: event)
+        FavoriteSessionsView(allSessions: RecordManager().sessions(for: event), event: event, path: Binding.constant(NavigationPath()))
     }
 }

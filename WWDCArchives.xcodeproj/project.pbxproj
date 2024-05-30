@@ -84,7 +84,6 @@
 				0ECAEDCC2C02988C00F87DB9 /* SessionDetailView.swift */,
 				0ECAEDCE2C02B5EA00F87DB9 /* ResourceLinkView.swift */,
 				0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */,
-				0ED6CF962C08E63000F4F23C /* FavoriteButton.swift */,
 			);
 			name = Home;
 			path = Views/Home;
@@ -117,8 +116,9 @@
 		0ED6CF9C2C08F70600F4F23C /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				0E669F7E2C06AE0B0005420F /* FavoriteSessionsView.swift */,
 				0ED6CF9F2C08F8E400F4F23C /* FavoritesView.swift */,
+				0E669F7E2C06AE0B0005420F /* FavoriteSessionsView.swift */,
+				0ED6CF962C08E63000F4F23C /* FavoriteButton.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
