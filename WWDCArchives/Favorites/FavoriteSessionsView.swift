@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct FavoriteSessionsView: View {
+    @State private var favoritesManager = FavoritesManager.shared
     let allSessions: [Session]
     let event: Event
     
     private var favoriteSessions: [Session] {
-        let favoriteIds = FavoritesManager.shared.favoriteSessionIds()
-        return allSessions.filter { favoriteIds.contains($0.id) }
+        return allSessions.filter { favoritesManager.favoriteSessionIds.contains($0.id) }
     }
     
     var body: some View {
