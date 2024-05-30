@@ -28,12 +28,14 @@ struct FavoriteSessionsView: View {
                 .listRowSeparator(.visible, edges: .bottom)
             }
             .listStyle(.plain)
-            .navigationTitle("Favorite Sessions")
+            .navigationTitle("Favorites")
             .overlay {
                 if favoriteSessions.isEmpty {
-                    Text("No favorite sessions")
-                        .foregroundStyle(.secondary)
-                        .padding()
+                    ContentUnavailableView {
+                        Label("No Favorites", systemImage: "star.slash")
+                    } description: {
+                        Text("Explore any event and add your favorite sessions.")
+                    }
                 }
             }
         }
