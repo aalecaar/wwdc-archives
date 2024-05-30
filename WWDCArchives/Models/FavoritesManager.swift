@@ -22,4 +22,10 @@ class FavoritesManager {
         let currentState = isFavorite(sessionId: sessionId)
         defaults.set(!currentState, forKey: keyPrefix + sessionId)
     }
+    
+    func favoriteSessionIds() -> [String] {
+        return defaults.dictionaryRepresentation().keys
+            .filter { $0.starts(with: keyPrefix) && defaults.bool(forKey: $0) }
+            .map { $0.replacingOccurrences(of: keyPrefix, with: "") }
+    }
 }

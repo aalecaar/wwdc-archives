@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct WWDCArchivesApp: App {
-    @State private var record = RecordManager()
     var body: some Scene {
         WindowGroup {
-            WWDCArchivesView()
-                .environment(record)
+            RootView()
         }
     }
 }

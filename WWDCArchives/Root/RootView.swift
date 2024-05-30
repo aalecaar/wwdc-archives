@@ -1,31 +1,33 @@
 //
-//  AppTabView.swift
+//  RootView.swift
 //  WWDCArchives
 //
-//  Created by xx on 26/05/24.
+//  Created by xx on 24/05/24.
 //
 
 import SwiftUI
 
-struct AppTabView: View {
+struct RootView: View {
+    @State private var record = RecordManager()
     var body: some View {
         TabView {
-            EventsView()
+            HomeView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
               
             
-            Text("Insights")
+            InsightsView()
                 .tabItem { Label("Insights", systemImage: "chart.bar") }
             
-            Text("Favorites")
+            FavoritesView(allSessions: record.allSessions, event: record.events[0])
                 .tabItem { Label("Favorites", systemImage: "star.fill") }
             
-            Text("FAQ")
+            FAQView()
                 .tabItem { Label("FAQ", systemImage: "questionmark.bubble") }
         }
     }
 }
 
+
 #Preview {
-    AppTabView()
+    RootView()
 }

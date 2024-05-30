@@ -10,10 +10,7 @@ import Charts
 struct InsightsView: View {
     @State private var record = RecordManager()
     var body: some View {
-        Chart {
-            
-        }
-        .aspectRatio(contentMode: .fit)
+        Text("Insights")
     }
 }
 
