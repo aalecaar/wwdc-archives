@@ -14,7 +14,7 @@ struct EventRowView: View {
         VStack {
             HStack(spacing: 4) {
                 Image(systemName: "apple.logo")
-                    .offset(y: 3)
+                    .offset(y: 4)
                 
                 Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
                     .offset(y: 8)
