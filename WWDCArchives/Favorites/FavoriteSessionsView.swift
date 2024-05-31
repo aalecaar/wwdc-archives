@@ -13,6 +13,8 @@ struct FavoriteSessionsView: View {
     let event: Event
     @Binding var path: NavigationPath
     let showHomeToolbar = false
+    @State private var searchText = ""
+
     
     private var favoriteSessions: [Session] {
         return allSessions.filter { favoritesManager.favoriteSessionIds.contains($0.id) }
@@ -20,7 +22,7 @@ struct FavoriteSessionsView: View {
     
     var body: some View {
         NavigationStack {
-            List(favoriteSessions) { session in
+            List(filteredSessions) { session in
                 NavigationLink(destination: SessionDetailView(session: session, event: event, path: $path, showHomeToolbar: showHomeToolbar)) {
                     SessionRowView(session: session)
                 }
@@ -29,6 +31,10 @@ struct FavoriteSessionsView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Favorites")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
+            .animation(.easeInOut, value: filteredSessions)
             .overlay {
                 if favoriteSessions.isEmpty {
                     ContentUnavailableView {
@@ -39,6 +45,18 @@ struct FavoriteSessionsView: View {
                 }
             }
         }
+    }
+    
+    var filteredSessions: [Session] {
+        guard !searchText.isEmpty else { return favoriteSessions }
+        
+        let filteredSessions = favoriteSessions.filter { session in
+            session.title.lowercased().contains(searchText.lowercased()) ||
+            session.topic.lowercased().contains(searchText.lowercased()) ||
+            session.eventContentID.lowercased().contains(searchText.lowercased())
+        }
+        
+        return filteredSessions
     }
 }
 
