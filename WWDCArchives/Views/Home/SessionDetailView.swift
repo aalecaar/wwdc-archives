@@ -47,7 +47,7 @@ struct SessionDetailView: View {
                 }
                 
                 
-                Text(session.description ?? "No available description")
+                Text(session.description ?? "No available description.")
                     .padding(.vertical, 4)
                 
                 if let speakers = session.speakers {

@@ -8,19 +8,38 @@
 import SwiftUI
 
 struct EventRowView: View {
+    @Environment(\.colorScheme) var colorScheme
     let event: Event
     var body: some View {
         VStack {
-            HStack {
+            HStack(spacing: 4) {
                 Image(systemName: "apple.logo")
-                    .font(.system(size: 50))
+                    .offset(y: 3)
                 
-                Text(event.name)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
+                Text(event.id.replacing("20", with: "", maxReplacements: 1).uppercased())
+                    .offset(y: 8)
+               
+                
+                
             }
+            .font(.system(size: 40, weight: .bold))
+            .foregroundStyle(colorScheme == .dark ? .black : .white)
+            .padding()
+            
+            
+            Text(event.description)
+                .foregroundStyle(colorScheme == .dark ? Color(.systemGray2) : .secondary )
+                .padding()
+                .background(colorScheme == .dark ? .gray.opacity(0.5): Color(.systemGray4))
+                .multilineTextAlignment(.leading)
+            
+            
         }
-
+        .background(colorScheme == .dark ? .white : .black)
+        .clipShape(.rect(cornerRadius: 10))
+        
+        
+        
     }
 }
 
