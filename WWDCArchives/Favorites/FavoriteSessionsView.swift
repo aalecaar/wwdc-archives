@@ -14,11 +14,6 @@ struct FavoriteSessionsView: View {
     @Binding var path: NavigationPath
     let showHomeToolbar = false
     @State private var searchText = ""
-
-    
-    private var favoriteSessions: [Session] {
-        return allSessions.filter { favoritesManager.favoriteSessionIds.contains($0.id) }
-    }
     
     var body: some View {
         NavigationStack {
@@ -36,15 +31,22 @@ struct FavoriteSessionsView: View {
             .autocorrectionDisabled()
             .animation(.easeInOut, value: filteredSessions)
             .overlay {
-                if favoriteSessions.isEmpty {
+                if searchText.isEmpty && filteredSessions.isEmpty {
                     ContentUnavailableView {
-                        Label("No Favorites", systemImage: "star.slash")
+                        Label("No Favorites", systemImage: "star")
                     } description: {
                         Text("Explore any event and add your favorite sessions.")
                     }
+                } else if !searchText.isEmpty && filteredSessions.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
                 }
             }
         }
+    }
+    
+    
+    private var favoriteSessions: [Session] {
+        return allSessions.filter { favoritesManager.favoriteSessionIds.contains($0.id) }
     }
     
     var filteredSessions: [Session] {
