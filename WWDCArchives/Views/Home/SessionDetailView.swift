@@ -74,21 +74,21 @@ struct SessionDetailView: View {
                     }
                     
                     if let hdDownloadURL = session.media.downloadHD {
-                        ResourceLinkView(url: hdDownloadURL, systemImageName: "arrow.down.circle", description: "Download HD")
+                        ResourceLinkView(url: hdDownloadURL, systemImageName: "link", description: "Video in HD")
                             .onAppear(perform: {
                                 resourceLinksPresented += 1
                             })
                     }
                     
                     if let sdDownloadURL = session.media.downloadSD {
-                        ResourceLinkView(url: sdDownloadURL, systemImageName: "arrow.down.circle", description: "Download SD")
+                        ResourceLinkView(url: sdDownloadURL, systemImageName: "link", description: "Video in SD")
                             .onAppear(perform: {
                                 resourceLinksPresented += 1
                             })
                     }
                     
                     if let slidesURL = session.media.slides {
-                        ResourceLinkView(url: slidesURL, systemImageName: "link", description: "Download Slides")
+                        ResourceLinkView(url: slidesURL, systemImageName: "link", description: "Slides")
                             .onAppear(perform: {
                                 resourceLinksPresented += 1
                             })
