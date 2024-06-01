@@ -50,14 +50,11 @@ final class RecordManager {
         "WWDC 2016 introduced macOS Sierra, iOS 10, watchOS 3, and tvOS 10. Cisco and Apple announced a partnership. Held at Bill Graham Civic Auditorium.",
         "WWDC 2017 announced iOS 11, watchOS 4, macOS High Sierra, and tvOS 11. New hardware included iMac Pro. Held at San Jose Convention Center.",
         "WWDC 2018 introduced iOS 12, macOS Mojave, watchOS 5, and tvOS 12. No new hardware announcements. Held at San Jose Convention Center.",
-        "WWDC 2019 featured iOS 13, macOS Catalina, watchOS 6, tvOS 13, iPadOS 13, new Mac Pro and Pro Display XDR. Held at San Jose Convention Center.",
+        "WWDC 2019 introduced SwiftUI, iOS 13, macOS Catalina, watchOS 6, tvOS 13, iPadOS 13, new Mac Pro and Pro Display XDR. Held at San Jose Convention Center.",
         "WWDC 2020 was held online due to COVID-19, introducing iOS 14, iPadOS 14, watchOS 7, tvOS 14, macOS Big Sur, and ARM processors for Macs.",
         "WWDC 2021 was an online event introducing iOS 15, iPadOS 15, watchOS 8, tvOS 15, and macOS Monterey. No new hardware was announced.",
         "WWDC 2022 introduced iOS 16, iPadOS 16, watchOS 9, tvOS 16, macOS Ventura, M2 chip, and new MacBook Air and Pro. Held online and in-person.",
-        "WWDC 2023 introduced macOS Sonoma, iOS 17, iPadOS 17, watchOS 10, tvOS 17, M2 Ultra chip, 15-inch MacBook Air, and Apple Vision Pro. Held online and in-person.",
-        "Various Tech Talks"
+        "WWDC 2023 featured macOS Sonoma, iOS 17, iPadOS 17, watchOS 10, tvOS 17, M2 Ultra chip, 15\" MacBook Air, and Apple Vision Pro. Held online and in-person.",
+        "Apple Tech Talks are sessions for developers, covering app design, new features, and best practices for Apple platforms. They're a resource for learning and improving apps."
     ]
-
-
-
 }
