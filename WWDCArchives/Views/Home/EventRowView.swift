@@ -35,10 +35,9 @@ struct EventRowView: View {
                     .lineLimit(5, reservesSpace: true)
                     .foregroundStyle(colorScheme == .dark ? Color(.systemGray2) : .secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(colorScheme == .dark ? .white.opacity(0.8) : .gray.opacity(0.1) )
+                    .background(colorScheme == .dark ? .white.opacity(0.8) : .gray.opacity(0.2) )
             }
         .clipShape(.rect(cornerRadius: 10))
-        .shadow(color: .secondary.opacity(0.8), radius: 6)
     }
 }
 
