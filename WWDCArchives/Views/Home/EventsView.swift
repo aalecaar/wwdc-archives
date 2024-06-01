@@ -12,15 +12,18 @@ struct EventsView: View {
     @State private var path = NavigationPath()
     var body: some View {
         NavigationStack(path: $path) {
-            List(record.events) { event in
-                NavigationLink(value: event) {
-                    EventRowView(event: event)
+            List(0..<record.events.count, id: \.self) { index in
+                NavigationLink(value: record.events[index]) {
+                    EventRowView(event: record.events[index], customDescription: record.customDescriptions[index])
+                        
                 }
                 .listSectionSeparator(.hidden, edges: .top)
+                
             }
             .listStyle(.plain)
             .navigationDestination(for: Event.self) { event in
                 EventSessionsView(sessions: record.sessions(for: event), event: event, path: $path)
+                    
             }
             .navigationTitle("Home")
             
