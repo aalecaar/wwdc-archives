@@ -20,28 +20,25 @@ struct EventRowView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(formattedEventID)
-                .font(.system(size: 40, weight: .bold))
-                .foregroundStyle(colorScheme == .dark ? .black : .white)
-                .padding(.top, 24)
-          
+            VStack(spacing: 0) {
+                Text(formattedEventID)
+                    .font(.system(size: 40, weight: .bold))
+                    .foregroundStyle(colorScheme == .dark ? .black : .white)
+                    .padding(.vertical, 24)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(colorScheme == .dark ? .white : .black)
+                
+                
+                
                 Text(customDescription)
-                .lineLimit(5, reservesSpace: true)
-                    .foregroundStyle(colorScheme == .dark ? Color(.systemGray2) : .secondary )
                     .padding()
+                    .lineLimit(5, reservesSpace: true)
+                    .foregroundStyle(colorScheme == .dark ? Color(.systemGray2) : .secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(colorScheme == .dark ? .gray.opacity(0.5): Color(.systemGray4))
-                    
-                    
-            
-            
-        }
-        .background(colorScheme == .dark ? .white : .black)
+                    .background(colorScheme == .dark ? .white.opacity(0.8) : .gray.opacity(0.1) )
+            }
         .clipShape(.rect(cornerRadius: 10))
-        
-        
-        
+        .shadow(color: .secondary.opacity(0.8), radius: 6)
     }
 }
 

@@ -95,7 +95,7 @@ struct SessionDetailView: View {
                     }
                     
                     if resourceLinksPresented == 0 {
-                        ContentUnavailableView("Sorry, no resources available for this session☹️", systemImage: "wrench.and.screwdriver")
+                        ContentUnavailableView("No Resources Available for This Session", systemImage: "wrench.and.screwdriver")
                     }
                 }
                 .padding(.vertical, 8)

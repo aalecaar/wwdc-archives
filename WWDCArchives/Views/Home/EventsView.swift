@@ -18,8 +18,6 @@ struct EventsView: View {
                         
                 }
                 .listSectionSeparator(.hidden, edges: .top)
-                
-                
             }
             .listStyle(.plain)
             .navigationDestination(for: Event.self) { event in
