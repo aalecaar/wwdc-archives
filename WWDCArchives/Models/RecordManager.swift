@@ -88,4 +88,11 @@ extension RecordManager {
         return Array(sortedTopics.prefix(7))
     }
     
+    var cumulativeTopicCounts: [(topic: String, count: Int, cumulativeCount: Int)] {
+        var cumulativeCount = 0
+        return sortedTopicsByFrequency.map { topic in
+            cumulativeCount += topic.count
+            return (topic: topic.topic, count: topic.count, cumulativeCount: cumulativeCount)
+        }
+    }
 }

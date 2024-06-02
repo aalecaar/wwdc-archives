@@ -14,30 +14,65 @@ struct TopicsPerYearChartView: View {
     @State private var selectedTopic: String?
     
     var body: some View {
-            Chart(record.sortedTopicsByFrequency, id: \.topic) { topic in
-                SectorMark(angle: .value("Count", topic.count), angularInset: 1.5)
+        NavigationStack {
+            VStack {
+                Chart(record.cumulativeTopicCounts, id: \.topic) { topic in
+                    SectorMark(
+                        angle: .value("Count", topic.count),
+                        innerRadius: .ratio(0.65),
+                        outerRadius: selectedTopic == topic.topic ? 175 : 150,
+                        angularInset: 1.5
+                    )
                     .foregroundStyle(by: .value("Topic Name", topic.topic))
                     .cornerRadius(4)
-                    .annotation(position: .overlay) {
-                        Text("\(topic.count)")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.white)
+                  
+                }
+                .chartAngleSelection(value: $selectedCount)
+                .chartBackground { chartProxy in
+                    GeometryReader { geometry in
+                        let frame = geometry[chartProxy.plotFrame!]
+                        VStack {
+                            if let selectedTopic {
+                                Text(selectedTopic)
+                                    .font(.callout)
+
+                                    Text("\(record.cumulativeTopicCounts.first { $0.topic == selectedTopic }?.count ?? 0)")
+
+                            }
+                        }
+                        .position(x: frame.midX, y: frame.midY)
                     }
-                    
-                   
+                }
+                .frame(height: 350)
+                Spacer()
             }
-            .chartAngleSelection(value: $selectedCount)
-            .scaledToFit()
-            .chartLegend(position: .trailing, alignment: .center, spacing: 20)
             .onChange(of: selectedCount) { oldValue, newValue in
                 if let newValue {
-                    print(newValue)
+                    withAnimation(.linear(duration: 0.1)) {
+                        getSelectedTopic(value: newValue)
+                    }
                 }
             }
+            .padding()
+            .navigationTitle("Topics Per Year")
+            .onAppear {
+                if let mostPopularTopic = record.cumulativeTopicCounts.first {
+                    selectedTopic = mostPopularTopic.topic
+                    selectedCount = mostPopularTopic.count
+                }
+            }
+        }
     }
     
-    
+    private func getSelectedTopic(value: Int) {
+        var cumulativeTotal = 0
+        if let topic = record.cumulativeTopicCounts.first(where: { topic in
+            cumulativeTotal += topic.count
+            return value <= cumulativeTotal
+        }) {
+            selectedTopic = topic.topic
+        }
+    }
 }
 
 #Preview {
