@@ -58,3 +58,26 @@ final class RecordManager {
         "Apple Tech Talks are sessions for developers, covering app design, new features, and best practices for Apple platforms. They're a resource for learning and improving apps."
     ]
 }
+
+extension RecordManager {
+    var eventYears: [Date] {
+        let yearsRange = 2000...2023
+        let yearsArray = yearsRange.map { $0 }
+        
+        func convertYearToDate(year: Int) -> Date {
+            var dateComponents = DateComponents()
+            dateComponents.year = year
+           
+            let calendar = Calendar.current
+            let date = calendar.date(from: dateComponents)
+            
+            return date!
+        }
+        
+        return yearsArray.map { convertYearToDate(year: $0) }
+    }
+    
+    var eventsForCharts: [Event] {
+        events.filter { $0.id != "tech-talks" }
+    }
+}
