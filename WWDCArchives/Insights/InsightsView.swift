@@ -11,7 +11,22 @@ import Charts
 struct InsightsView: View {
     @State private var record = RecordManager()
     var body: some View {
-        SessionsPerYearChartView(record: record)
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 40) {
+                    SessionsPerYearChartView(record: record)
+                    
+                    Divider()
+                    
+                    TopicsPerYearChartView(record: record)
+                }
+                .padding()
+
+            }
+            .navigationTitle("Insights")
+        }
+        
+       
     }
 }
 // Hay 25 elementos en record.events, pero hay solo 24 en record.eventYears

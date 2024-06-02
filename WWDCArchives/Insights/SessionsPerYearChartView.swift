@@ -16,7 +16,7 @@ struct SessionsPerYearChartView: View {
                 LineMark(x: .value("Year", record.eventYears[index], unit: .year), y: .value("Sessions", record.sessions(for: event).count))
             }
         }
-        .frame(height: 400)
+        .scaledToFit()
     }
 }
 

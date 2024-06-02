@@ -80,4 +80,12 @@ extension RecordManager {
     var eventsForCharts: [Event] {
         events.filter { $0.id != "tech-talks" }
     }
+    
+    var sortedTopicsByFrequency: [(topic: String, count: Int)] {
+        let topics = allSessions.map { $0.topic }
+        let topicCounts = Dictionary(grouping: topics, by: { $0 }).mapValues { $0.count }
+        let sortedTopics = topicCounts.map { (topic: $0.key, count: $0.value) }.sorted { $0.count > $1.count }
+        return Array(sortedTopics.prefix(7))
+    }
+    
 }
