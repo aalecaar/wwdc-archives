@@ -10,31 +10,34 @@ import Charts
 
 struct TopicsPerYearChartView: View {
     let record: RecordManager
-    @State private var selectedCount: Int? = nil
+    @State private var selectedCount: Int?
+    @State private var selectedTopic: String?
+    
     var body: some View {
-        
             Chart(record.sortedTopicsByFrequency, id: \.topic) { topic in
-                
                 SectorMark(angle: .value("Count", topic.count), angularInset: 1.5)
                     .foregroundStyle(by: .value("Topic Name", topic.topic))
-                    .cornerRadius(8)
+                    .cornerRadius(4)
                     .annotation(position: .overlay) {
                         Text("\(topic.count)")
+                            .font(.caption)
                             .fontWeight(.bold)
                             .foregroundStyle(.white)
                     }
-                
+                    
+                   
             }
+            .chartAngleSelection(value: $selectedCount)
             .scaledToFit()
-            .chartLegend(alignment: .center, spacing: 20)
-            .chartXSelection(value: $selectedCount)
+            .chartLegend(position: .trailing, alignment: .center, spacing: 20)
             .onChange(of: selectedCount) { oldValue, newValue in
                 if let newValue {
                     print(newValue)
                 }
             }
-        
     }
+    
+    
 }
 
 #Preview {
