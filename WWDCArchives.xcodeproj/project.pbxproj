@@ -24,6 +24,8 @@
 		0EEBCFF02C0164A8002B1C07 /* RecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */; };
 		0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFF12C018889002B1C07 /* RecordManager.swift */; };
 		0EEBCFF42C0196F4002B1C07 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */; };
+		0EF9D7332C0CCD9500BA4874 /* SessionsPerYearChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9D7322C0CCD9500BA4874 /* SessionsPerYearChartView.swift */; };
+		0EF9D7352C0CCE7E00BA4874 /* TopicsPerYearChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9D7342C0CCE7E00BA4874 /* TopicsPerYearChartView.swift */; };
 		0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDCF762C0110DC0007FAD5 /* WWDCArchivesApp.swift */; };
 		0EFDCF792C0110DC0007FAD5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDCF782C0110DC0007FAD5 /* RootView.swift */; };
 		0EFDCF7B2C0110DD0007FAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFDCF7A2C0110DD0007FAD5 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		0EEBCFEF2C0164A8002B1C07 /* RecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLoader.swift; sourceTree = "<group>"; };
 		0EEBCFF12C018889002B1C07 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		0EEBCFF32C0196F4002B1C07 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
+		0EF9D7322C0CCD9500BA4874 /* SessionsPerYearChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsPerYearChartView.swift; sourceTree = "<group>"; };
+		0EF9D7342C0CCE7E00BA4874 /* TopicsPerYearChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsPerYearChartView.swift; sourceTree = "<group>"; };
 		0EFDCF732C0110DC0007FAD5 /* WWDCArchives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWDCArchives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFDCF762C0110DC0007FAD5 /* WWDCArchivesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCArchivesApp.swift; sourceTree = "<group>"; };
 		0EFDCF782C0110DC0007FAD5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				0E0F5A482C07F4FB00BE0265 /* InsightsView.swift */,
+				0EF9D7322C0CCD9500BA4874 /* SessionsPerYearChartView.swift */,
+				0EF9D7342C0CCE7E00BA4874 /* TopicsPerYearChartView.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -266,11 +272,13 @@
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
 				0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */,
 				0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */,
+				0EF9D7332C0CCD9500BA4874 /* SessionsPerYearChartView.swift in Sources */,
 				0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */,
 				0ED6CFA22C08FA8C00F4F23C /* FAQView.swift in Sources */,
 				0ED6CFA02C08F8E400F4F23C /* FavoritesView.swift in Sources */,
 				0ED6CF9E2C08F87900F4F23C /* HomeView.swift in Sources */,
 				0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */,
+				0EF9D7352C0CCE7E00BA4874 /* TopicsPerYearChartView.swift in Sources */,
 				0ED6CF9B2C08E81E00F4F23C /* FavoritesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
