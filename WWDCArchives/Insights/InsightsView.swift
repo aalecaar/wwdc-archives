@@ -12,21 +12,20 @@ struct InsightsView: View {
     @State private var record = RecordManager()
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 40) {
+            List {
+                Section("Number of sessions over time") {
                     SessionsPerYearChartView(record: record)
-                    
-                    Divider()
-                    
+
+                }
+                
+                Section("Top 7 Popular Topics") {
                     TopicsPerYearChartView(record: record)
                 }
-                .padding()
+           
 
             }
             .navigationTitle("Insights")
         }
-        
-       
     }
 }
 

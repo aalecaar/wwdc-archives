@@ -48,7 +48,7 @@ struct TopicsPerYearChartView: View {
                     }
                 }
             }
-            .frame(width: 364, height: 430)
+            .frame(width: 330, height: 430)
             .chartLegend(position: .bottom, alignment: .center, spacing: 0)
             .onChange(of: selectedCount) { oldValue, newValue in
                 if let newValue {
