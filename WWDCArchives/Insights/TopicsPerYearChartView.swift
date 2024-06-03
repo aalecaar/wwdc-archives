@@ -14,7 +14,7 @@ struct TopicsPerYearChartView: View {
     @State private var selectedTopic: String?
     
     var body: some View {
-        NavigationStack {
+        
             VStack {
                 Chart(record.cumulativeTopicCounts, id: \.topic) { topic in
                     SectorMark(
@@ -34,18 +34,21 @@ struct TopicsPerYearChartView: View {
                         VStack {
                             if let selectedTopic {
                                 Text(selectedTopic)
-                                    .font(.callout)
+                                    .font(.headline)
+                                    
 
                                     Text("\(record.cumulativeTopicCounts.first { $0.topic == selectedTopic }?.count ?? 0)")
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.secondary)
 
                             }
                         }
                         .position(x: frame.midX, y: frame.midY)
                     }
                 }
-                .frame(height: 350)
-                Spacer()
             }
+            .frame(width: 364, height: 430)
+            .chartLegend(position: .bottom, alignment: .center, spacing: 0)
             .onChange(of: selectedCount) { oldValue, newValue in
                 if let newValue {
                     withAnimation(.linear(duration: 0.1)) {
@@ -53,15 +56,12 @@ struct TopicsPerYearChartView: View {
                     }
                 }
             }
-            .padding()
-            .navigationTitle("Topics Per Year")
             .onAppear {
                 if let mostPopularTopic = record.cumulativeTopicCounts.first {
                     selectedTopic = mostPopularTopic.topic
                     selectedCount = mostPopularTopic.count
                 }
             }
-        }
     }
     
     private func getSelectedTopic(value: Int) {

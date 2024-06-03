@@ -29,7 +29,7 @@ struct InsightsView: View {
        
     }
 }
-// Hay 25 elementos en record.events, pero hay solo 24 en record.eventYears
+
 #Preview {
     InsightsView()
 }
