@@ -95,4 +95,11 @@ extension RecordManager {
             return (topic: topic.topic, count: topic.count, cumulativeCount: cumulativeCount)
         }
     }
+    
+    var topSpeakersByFrequency: [(speaker: String, count: Int)] {
+        let speakers = allSessions.compactMap { $0.speakers }.flatMap { $0 }
+        let speakerCounts = Dictionary(grouping: speakers, by: { $0 }).mapValues { $0.count }
+        let sortedSpeakers = speakerCounts.map { (speaker: $0.key, count: $0.value) }.sorted { $0.count > $1.count }
+        return Array(sortedSpeakers.prefix(7))
+    }
 }

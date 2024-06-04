@@ -22,6 +22,9 @@ struct InsightsView: View {
                     TopicsPerYearChartView(record: record)
                 }
            
+                Section("Top 7 Popular Speakers") {
+                    TopSpeakersChartView(record: record)
+                }
 
             }
             .navigationTitle("Insights")

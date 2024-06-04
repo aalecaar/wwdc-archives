@@ -25,7 +25,7 @@ struct TopicsPerYearChartView: View {
                     )
                     .foregroundStyle(by: .value("Topic Name", topic.topic))
                     .cornerRadius(4)
-                    .opacity(selectedTopic == topic.topic ? 1 : 0.5)
+                    .opacity(selectedTopic == topic.topic ? 1 : 0.7)
                   
                 }
                 .chartAngleSelection(value: $selectedCount)
