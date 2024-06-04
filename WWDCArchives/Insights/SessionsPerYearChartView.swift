@@ -6,7 +6,7 @@ struct SessionsPerYearChartView: View {
     @State private var selectedYear: Date?
     @State private var selectedCount: Int?
     @State private var showOverlay: Bool = false
-
+    
     var body: some View {
         VStack {
             Chart {
@@ -24,16 +24,18 @@ struct SessionsPerYearChartView: View {
                         if showOverlay, let selectedYear, let selectedCount {
                             let xPosition = proxy.position(forX: selectedYear) ?? 0
                             let yPosition = proxy.position(forY: selectedCount) ?? 0
-
+                            
                             VStack {
-                                Text("Year: \(Calendar.current.component(.year, from: selectedYear))")
-                                Text("Sessions: \(selectedCount)")
+                                Text(" \(Calendar.current.component(.year, from: selectedYear).formatted(.number.grouping(.never)))")
+                                Text("\(selectedCount)")
+                                    .font(.caption)
+                                    .fontWeight(.semibold)
                             }
                             .foregroundStyle(.secondary)
                             .fontWeight(.semibold)
                             .position(x: xPosition, y: yPosition - 20)
                         }
-                                                
+                        
                         Rectangle().foregroundColor(.clear)
                             .contentShape(Rectangle())
                             .gesture(

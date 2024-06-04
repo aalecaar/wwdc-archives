@@ -9,7 +9,9 @@ import Charts
 
 struct AverageSessionDurationPerYearChartView: View {
     let record: RecordManager
-    
+    @State private var selectedYear: Date?
+    @State private var selectedAverage: Double?
+    @State private var showOverlay: Bool = false
     var body: some View {
         VStack {
             Chart {
@@ -21,6 +23,49 @@ struct AverageSessionDurationPerYearChartView: View {
                 }
             }
             .frame(width: 330, height: 330)
+            .frame(width: 330, height: 330)
+            .chartOverlay { proxy in
+                GeometryReader { geometry in
+                    ZStack {
+                        if showOverlay, let selectedYear, let selectedAverage {
+                            let xPosition = proxy.position(forX: selectedYear) ?? 0
+                            let yPosition = proxy.position(forY: selectedAverage) ?? 0
+                            
+                            VStack {
+                                Text("\(Calendar.current.component(.year, from: selectedYear).formatted(.number.grouping(.never)))")
+                                Text("\(selectedAverage.formatted(.number.precision(.fractionLength(0)))) min")
+                                    .font(.caption)
+                            }
+                            .foregroundStyle(.secondary)
+                            .fontWeight(.semibold)
+                            .position(x: xPosition, y: yPosition - 20)
+                        }
+                        
+                        Rectangle().foregroundColor(.clear)
+                            .contentShape(Rectangle())
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        if let plotAreaFrame = proxy.plotFrame {
+                                            let frame = geometry[plotAreaFrame]
+                                            
+                                            let xStart = frame.minX
+                                            let xEnd = frame.maxX
+                                            let xLocation = value.location.x
+                                            let relativeX = max(0, min(1, (xLocation - xStart) / (xEnd - xStart)))
+                                            
+                                            let index = Int(round(relativeX * Double(record.eventYears.count - 1)))
+                                            let closestYear = record.eventYears[index]
+                                            selectedYear = closestYear
+                                            selectedAverage = averageDuration(for: closestYear)
+                                            showOverlay = true
+                                        }
+                                    }
+                                    .onEnded { _ in showOverlay = false }
+                            )
+                    }
+                }
+            }
         }
         .padding()
     }
