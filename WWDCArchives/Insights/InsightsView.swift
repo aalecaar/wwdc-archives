@@ -25,6 +25,10 @@ struct InsightsView: View {
                 Section("Top 7 Popular Speakers") {
                     TopSpeakersChartView(record: record)
                 }
+                
+                Section("Average Session Duration Over Time") {
+                    AverageSessionDurationPerYearChartView(record: record)
+                }
 
             }
             .navigationTitle("Insights")
