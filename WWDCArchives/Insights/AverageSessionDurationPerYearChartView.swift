@@ -13,7 +13,7 @@ struct AverageSessionDurationPerYearChartView: View {
     @State private var selectedAverage: Double?
     @State private var showOverlay: Bool = false
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 12) {
             Chart {
                 ForEach(Array(record.eventYears.enumerated()), id: \.element) { index, year in
                     LineMark(

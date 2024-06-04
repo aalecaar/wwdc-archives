@@ -11,6 +11,8 @@
 		0E1446A82C0F6EEF00BE59A1 /* AverageSessionDurationPerYearChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1446A72C0F6EEF00BE59A1 /* AverageSessionDurationPerYearChartView.swift */; };
 		0E1446AA2C0F708700BE59A1 /* TopSpeakersChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1446A92C0F708700BE59A1 /* TopSpeakersChartView.swift */; };
 		0E669F7F2C06AE0B0005420F /* FavoriteSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E669F7E2C06AE0B0005420F /* FavoriteSessionsView.swift */; };
+		0EBE14F82C0F89AC00521C6B /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE14F72C0F89AC00521C6B /* FAQItem.swift */; };
+		0EBE14FA2C0F89CD00521C6B /* ExpandableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE14F92C0F89CD00521C6B /* ExpandableCardView.swift */; };
 		0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */; };
 		0EC0D1B12C04211200AFFBC8 /* WWDCRecord.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EC0D1B02C04211200AFFBC8 /* WWDCRecord.json */; };
 		0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */; };
@@ -39,6 +41,8 @@
 		0E1446A72C0F6EEF00BE59A1 /* AverageSessionDurationPerYearChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageSessionDurationPerYearChartView.swift; sourceTree = "<group>"; };
 		0E1446A92C0F708700BE59A1 /* TopSpeakersChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSpeakersChartView.swift; sourceTree = "<group>"; };
 		0E669F7E2C06AE0B0005420F /* FavoriteSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSessionsView.swift; sourceTree = "<group>"; };
+		0EBE14F72C0F89AC00521C6B /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
+		0EBE14F92C0F89CD00521C6B /* ExpandableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCardView.swift; sourceTree = "<group>"; };
 		0EC0D19E2C03B48500AFFBC8 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		0EC0D1B02C04211200AFFBC8 /* WWDCRecord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WWDCRecord.json; path = ../../../WWDCRecord.json; sourceTree = "<group>"; };
 		0ECAEDC82C02567100F87DB9 /* SessionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRowView.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				0ED6CFA12C08FA8C00F4F23C /* FAQView.swift */,
+				0EBE14F92C0F89CD00521C6B /* ExpandableCardView.swift */,
+				0EBE14F72C0F89AC00521C6B /* FAQItem.swift */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -278,12 +284,14 @@
 				0EEBCFF22C018889002B1C07 /* RecordManager.swift in Sources */,
 				0EFDCF772C0110DC0007FAD5 /* WWDCArchivesApp.swift in Sources */,
 				0ECAEDCB2C0294C600F87DB9 /* EventSessionsView.swift in Sources */,
+				0EBE14FA2C0F89CD00521C6B /* ExpandableCardView.swift in Sources */,
 				0ECAEDCF2C02B5EA00F87DB9 /* ResourceLinkView.swift in Sources */,
 				0EF9D7332C0CCD9500BA4874 /* SessionsPerYearChartView.swift in Sources */,
 				0EC0D19F2C03B48500AFFBC8 /* EventsView.swift in Sources */,
 				0E1446AA2C0F708700BE59A1 /* TopSpeakersChartView.swift in Sources */,
 				0ED6CFA22C08FA8C00F4F23C /* FAQView.swift in Sources */,
 				0ED6CFA02C08F8E400F4F23C /* FavoritesView.swift in Sources */,
+				0EBE14F82C0F89AC00521C6B /* FAQItem.swift in Sources */,
 				0ED6CF9E2C08F87900F4F23C /* HomeView.swift in Sources */,
 				0ECAEDC92C02567100F87DB9 /* SessionRowView.swift in Sources */,
 				0EF9D7352C0CCE7E00BA4874 /* TopicsPerYearChartView.swift in Sources */,

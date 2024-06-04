@@ -18,6 +18,7 @@ struct InsightsView: View {
 
                 }
                 
+                
                 Section("Top 7 Popular Topics") {
                     TopicsPerYearChartView(record: record)
                 }
