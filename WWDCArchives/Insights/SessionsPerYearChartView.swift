@@ -8,7 +8,6 @@ struct SessionsPerYearChartView: View {
     @State private var showOverlay: Bool = false
     
     var body: some View {
-        VStack {
             Chart {
                 ForEach(Array(record.eventsForCharts.enumerated()), id: \.element) { index, event in
                     LineMark(
@@ -61,8 +60,6 @@ struct SessionsPerYearChartView: View {
                     }
                 }
             }
-        }
-        .padding()
     }
 }
 

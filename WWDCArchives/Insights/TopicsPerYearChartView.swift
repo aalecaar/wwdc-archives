@@ -14,8 +14,6 @@ struct TopicsPerYearChartView: View {
     @State private var selectedTopic: String?
     
     var body: some View {
-        
-            VStack {
                 Chart(record.cumulativeTopicCounts, id: \.topic) { topic in
                     SectorMark(
                         angle: .value("Count", topic.count),
@@ -46,8 +44,7 @@ struct TopicsPerYearChartView: View {
                         }
                         .position(x: frame.midX, y: frame.midY)
                     }
-                }
-            }
+                }    
             .frame(width: 330, height: 430)
             .chartLegend(position: .bottom, alignment: .center, spacing: 0)
             .onChange(of: selectedCount) { oldValue, newValue in

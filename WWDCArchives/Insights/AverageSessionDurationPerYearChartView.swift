@@ -13,7 +13,7 @@ struct AverageSessionDurationPerYearChartView: View {
     @State private var selectedAverage: Double?
     @State private var showOverlay: Bool = false
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Chart {
                 ForEach(Array(record.eventYears.enumerated()), id: \.element) { index, year in
                     LineMark(
@@ -66,8 +66,11 @@ struct AverageSessionDurationPerYearChartView: View {
                     }
                 }
             }
+            Text("Note: The sudden drop for 2007 is due to the lack of information about the duration of most of that year sessions. We can assume the real average is similar to the previous years.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+
         }
-        .padding()
     }
     
     private func averageDuration(for year: Date) -> Double {

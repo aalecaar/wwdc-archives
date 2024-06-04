@@ -12,7 +12,6 @@ struct TopSpeakersChartView: View {
     let record: RecordManager
 
     var body: some View {
-        VStack {
             Chart(record.topSpeakersByFrequency, id: \.speaker) { speaker in
                 BarMark(
                     x: .value("Count", speaker.count),
@@ -22,7 +21,6 @@ struct TopSpeakersChartView: View {
             }
             .frame(height: 300)
             .chartLegend(position: .bottom, alignment: .center, spacing: 0)
-        }
     }
 }
 
