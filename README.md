@@ -1,1 +1,2 @@
-# wwdc-archives
+# WWDC Archives
+This application aims to show publicly available information as well as details and insights on WWDC events since 2000. Although there are official resources to find this information, early events don't have the same visibility as newer events do, making it really hard to find information about them. In addition to that advantage, this app provides some interesting charts, allowing you to see how things have evolved since then. 
